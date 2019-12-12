@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface QuoteApi {
 
-    @GET("quote")
+    @GET("")
     fun getQuote(): Single<List<Quote_Model>>
 }
