@@ -1,7 +1,8 @@
-package com.example.quoting_mr_west
+package com.example.quoting_mr_west.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.quoting_mr_west.R
 
 class MainActivity : AppCompatActivity() {
 
