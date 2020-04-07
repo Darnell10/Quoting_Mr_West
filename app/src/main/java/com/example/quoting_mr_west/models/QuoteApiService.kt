@@ -16,7 +16,7 @@ class QuoteApiService {
         .build()
         .create(QuoteApi::class.java)
 
-    fun getQuote(): Single<List<Quote_Model>>{
+    fun getQuote(): Single<Quote_Model>{
         return apiService.getQuote()
     }
 }
