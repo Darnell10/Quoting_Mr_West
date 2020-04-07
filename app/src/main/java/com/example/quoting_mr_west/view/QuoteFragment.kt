@@ -23,4 +23,5 @@ class QuoteFragment : Fragment() {
     }
 
 
+
 }
