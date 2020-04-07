@@ -1,4 +1,12 @@
 package com.example.quoting_mr_west.viewmodel
 
-class QuoteViewModel {
+import android.app.Application
+
+class QuoteViewModel(application: Application)  {
+
+
+
+
+
+
 }
