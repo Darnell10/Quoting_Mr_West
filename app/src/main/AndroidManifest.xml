@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.quoting_mr_west">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name="androidx.multidex.MultiDexApplication"
         android:allowBackup="true"
