@@ -1,6 +1,7 @@
 package com.example.quoting_mr_west.viewmodel
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.quoting_mr_west.models.QuoteApiService
@@ -25,6 +26,7 @@ class QuoteViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     private fun fetchFromRemote() {
+        loading.value = true
         disposable.add(
             quoteApiService.getQuote()
                 .subscribeOn(Schedulers.newThread())
@@ -34,6 +36,7 @@ class QuoteViewModel(application: Application) : AndroidViewModel(application) {
                         quoteLoaderError.value = false
                         quote.value = quoteModel
                         loading.value = false
+                        Log.e("ViewModel", quote.toString())
                     }
 
                     override fun onError(e: Throwable) {
