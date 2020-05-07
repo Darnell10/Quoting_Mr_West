@@ -50,7 +50,7 @@
                 android:id="@+id/listError"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/an_error_occured_while_loading_data"
+                android:text="@string/an_error_occurred_while_loading_data"
                 app:layout_constraintBottom_toBottomOf="@+id/quote_text_view"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
