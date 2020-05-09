@@ -36,7 +36,7 @@ class QuoteViewModel(application: Application) : AndroidViewModel(application) {
                         quoteLoaderError.value = false
                         quote.value = quoteModel
                         loading.value = false
-                        Log.e("ViewModel", quote.toString())
+                        Log.e("ViewModel", "${quote.value}")
                     }
 
                     override fun onError(e: Throwable) {
