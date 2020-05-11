@@ -2,6 +2,7 @@ package com.example.quoting_mr_west.view
 
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -23,7 +24,7 @@ import kotlinx.android.synthetic.main.fragment_quote.view.*
  */
 class QuoteFragment : Fragment() {
 
-    var quote: Quote_Model? = null
+    var quote: Quote_Model? = Quote_Model("What he say??")
     private lateinit var viewModel: QuoteViewModel
     private lateinit var dataBinding: FragmentQuoteBinding
 
@@ -41,19 +42,16 @@ class QuoteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        viewModel = ViewModelProviders.of(this).get(QuoteViewModel::class.java)
-        viewModel.refresh()
-
-        dataBinding.quote = quote
-
-        //quote_text_view.text = quote_text_view?.quote_text_view.toString()
+        activity?.let {
+            viewModel = ViewModelProviders.of(it).get(QuoteViewModel::class.java)
+        }
 
         refresh_layout.setOnRefreshListener {
             quote_text_view.visibility = View.GONE
             listError.visibility = View.GONE
             loadingView.visibility = View.VISIBLE
             refresh_layout.isRefreshing = false
+            viewModel.refresh()
 
         }
 
@@ -64,6 +62,7 @@ class QuoteFragment : Fragment() {
         viewModel.quote.observe(this, Observer { quote ->
             quote?.let {
                 quote_text_view.visibility = View.VISIBLE
+                dataBinding.quote = it
             }
 
         })

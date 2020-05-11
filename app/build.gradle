@@ -27,6 +27,7 @@ android {
         }
     }
 
+    //databinding{enabled = true}
     dataBinding.enabled = true
 }
 

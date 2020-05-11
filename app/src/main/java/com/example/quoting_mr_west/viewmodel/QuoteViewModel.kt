@@ -20,6 +20,9 @@ class QuoteViewModel(application: Application) : AndroidViewModel(application) {
     val quoteLoaderError = MutableLiveData<Boolean>()
     val loading = MutableLiveData<Boolean>()
 
+    init {
+        fetchFromRemote()
+    }
     fun refresh() {
 
         fetchFromRemote()
