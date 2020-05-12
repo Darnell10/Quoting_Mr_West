@@ -19,9 +19,9 @@ Android Jetpack components (Databinding)
   </h2>
 
 <h1> Immediate Future Implementations</h1>
-Add a room database to store quotes temporarily.
-Implement Dagger.
-Jetpack Navigation
+<h2>Add a room database to store quotes temporarily,
+Implement Dagger,
+Jetpack Navigation.</h2>
 
 
 
