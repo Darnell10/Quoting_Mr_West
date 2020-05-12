@@ -3,6 +3,10 @@ What will Did he say?!?!
 
 This app is meant for entertainment based on the quotes from a very polarizing modern figue Kanye West.
 
+Usage
+This app is intended for entertainment purposes.
+
+
 
 Icon on home Screen
 ![image](https://user-images.githubusercontent.com/30957125/81628847-bad11780-93cf-11ea-9ecc-df42d47c9828.png)
