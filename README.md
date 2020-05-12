@@ -1,12 +1,29 @@
 # Quoting_Mr_West
-What will Did he say?!?!
 
 This app is meant for entertainment based on the quotes from a very polarizing modern figue Kanye West.
 
 This is an on-going project with more features and improvments on the way.
 
-Usage
-This app is intended for entertainment purposes.
+<h1> Usage  </h1>
+<h3> This app is intended for entertainment purposes.</h3>
+
+<h1> Architecture </h1>
+<h2>MVVM</h2>
+
+<h1> Technologies Used </h1>
+
+<h2>Kotlin ,
+Retrofit ,
+RxJava,
+Android Jetpack components (Databinding)
+  </h2>
+
+<h1> Immediate Future Implementations</h1>
+Add a room database to store quotes temporarily.
+Implement Dagger.
+Jetpack Navigation
+
+
 
 
 
