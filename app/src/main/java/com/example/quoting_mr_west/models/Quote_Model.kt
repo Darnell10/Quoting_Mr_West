@@ -11,6 +11,5 @@ data class Quote_Model(
     @SerializedName("quote")
     val quote: String?
 ) {
-    @PrimaryKey(autoGenerate = true)
-    var uuid: Int = 0
+
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#000000</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#000000</color>
-    <color name="appTextColor">#000000</color>
+    <color name="colorPrimary">#0e1111</color>
+    <color name="colorPrimaryDark">#0e1111</color>
+    <color name="colorAccent">#0e1111</color>
+    <color name="appTextColor">#0e1111</color>
 
     <style name="SplashScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
