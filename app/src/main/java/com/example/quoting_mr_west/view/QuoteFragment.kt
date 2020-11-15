@@ -25,6 +25,7 @@ class QuoteFragment : Fragment() {
     var quote: Quote_Model? = Quote_Model("What he say??")
     private lateinit var viewModel: QuoteViewModel
     private lateinit var dataBinding: FragmentQuoteBinding
+    private var sendTextStarted = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -94,13 +95,18 @@ class QuoteFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.send_text -> {
-
+                sendTextStarted = true
+              //  (activity as MainActivity).checkTextPermission()
             }
             R.id.action_share -> {
 
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    fun onPermissionResult(permissionGranted :Boolean){
+
     }
 
 }
