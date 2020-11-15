@@ -3,10 +3,8 @@ package com.example.quoting_mr_west.view
 
 import android.os.Bundle
 import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.Observer
@@ -33,6 +31,7 @@ class QuoteFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        setHasOptionsMenu(true)
         dataBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_quote, container,
             false
@@ -85,6 +84,23 @@ class QuoteFragment : Fragment() {
 
         })
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.share_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.send_text -> {
+
+            }
+            R.id.action_share -> {
+
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }
