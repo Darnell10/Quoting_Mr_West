@@ -11,4 +11,5 @@
     <string name="about_menu">About</string>
     <string name="share">Share</string>
     <string name="send_text">Send Text</string>
+    <string name="to">To:</string>
 </resources>

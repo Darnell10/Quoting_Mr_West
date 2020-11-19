@@ -13,3 +13,9 @@ data class Quote_Model(
 ) {
 
 }
+
+data class SmsInfo(
+    var to: String,
+    var text: String,
+    var quote: String?
+)

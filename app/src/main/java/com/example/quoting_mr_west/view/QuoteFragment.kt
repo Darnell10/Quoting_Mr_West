@@ -4,6 +4,7 @@ package com.example.quoting_mr_west.view
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.AndroidViewModel
@@ -12,7 +13,9 @@ import androidx.lifecycle.ViewModelProviders
 
 import com.example.quoting_mr_west.R
 import com.example.quoting_mr_west.databinding.FragmentQuoteBinding
+import com.example.quoting_mr_west.databinding.SendSmsDialogBinding
 import com.example.quoting_mr_west.models.Quote_Model
+import com.example.quoting_mr_west.models.SmsInfo
 import com.example.quoting_mr_west.viewmodel.QuoteViewModel
 import kotlinx.android.synthetic.main.fragment_quote.*
 import kotlinx.android.synthetic.main.fragment_quote.view.*
@@ -26,6 +29,7 @@ class QuoteFragment : Fragment() {
     private lateinit var viewModel: QuoteViewModel
     private lateinit var dataBinding: FragmentQuoteBinding
     private var sendTextStarted = false
+    private var currentQuote: Quote_Model? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,6 +64,7 @@ class QuoteFragment : Fragment() {
 
     private fun observeQuoteViewModel() {
         viewModel.quote.observe(this, Observer { quote ->
+            currentQuote = quote
             quote?.let {
                 quote_text_view.visibility = View.VISIBLE
                 dataBinding.quote = it
@@ -96,7 +101,7 @@ class QuoteFragment : Fragment() {
         when (item.itemId) {
             R.id.send_text -> {
                 sendTextStarted = true
-              //  (activity as MainActivity).checkTextPermission()
+               (activity as MainActivity).checkSmsPermissions()
             }
             R.id.action_share -> {
 
@@ -105,7 +110,35 @@ class QuoteFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun onPermissionResult(permissionGranted :Boolean){
+    fun onPermissionResult(permissionGranted: Boolean) {
+        if (sendTextStarted && permissionGranted) {
+            context?.let {
+                val smsInfo = SmsInfo("", "", "${currentQuote?.quote} + @string/credit_string")
+
+                val dialogBinding = DataBindingUtil.inflate<SendSmsDialogBinding>(
+                    LayoutInflater.from(it),
+                    R.layout.send_sms_dialog,
+                    null,
+                    false
+                )
+
+                AlertDialog.Builder(it)
+                    .setView(dialogBinding.root)
+                    .setPositiveButton("Send Quote") { dialog, which ->
+                        if (!dialogBinding.smsInfo?.text.isNullOrEmpty()) {
+                            smsInfo.to = dialogBinding.smsInfo?.text.toString()
+                            sendSms(smsInfo)
+                        }
+                    }
+                    .setNegativeButton("Cancel") { dialog, which ->
+                    }.show()
+
+                dialogBinding.smsInfo = smsInfo
+            }
+        }
+    }
+
+    private fun sendSms(smsInfo: SmsInfo) {
 
     }
 
