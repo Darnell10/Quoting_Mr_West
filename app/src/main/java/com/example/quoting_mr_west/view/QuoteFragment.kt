@@ -1,16 +1,16 @@
 package com.example.quoting_mr_west.view
 
 
+import android.app.PendingIntent
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.telephony.SmsManager
 import android.view.*
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-
 import com.example.quoting_mr_west.R
 import com.example.quoting_mr_west.databinding.FragmentQuoteBinding
 import com.example.quoting_mr_west.databinding.SendSmsDialogBinding
@@ -18,7 +18,6 @@ import com.example.quoting_mr_west.models.Quote_Model
 import com.example.quoting_mr_west.models.SmsInfo
 import com.example.quoting_mr_west.viewmodel.QuoteViewModel
 import kotlinx.android.synthetic.main.fragment_quote.*
-import kotlinx.android.synthetic.main.fragment_quote.view.*
 
 /**
  * A simple [Fragment] subclass.
@@ -101,10 +100,17 @@ class QuoteFragment : Fragment() {
         when (item.itemId) {
             R.id.send_text -> {
                 sendTextStarted = true
-               (activity as MainActivity).checkSmsPermissions()
+                (activity as MainActivity).checkSmsPermissions()
             }
             R.id.action_share -> {
-
+                val intent = Intent(Intent.ACTION_SEND)
+                intent.type = "text/plain"
+                intent.putExtra(Intent.EXTRA_SUBJECT,"Kanye said...")
+                intent.putExtra(
+                    Intent.EXTRA_TEXT,
+                    "${currentQuote?.quote}  - Kanye West"
+                )
+                startActivity(Intent.createChooser(intent,"Share with"))
             }
         }
         return super.onOptionsItemSelected(item)
@@ -113,7 +119,7 @@ class QuoteFragment : Fragment() {
     fun onPermissionResult(permissionGranted: Boolean) {
         if (sendTextStarted && permissionGranted) {
             context?.let {
-                val smsInfo = SmsInfo("", "", "${currentQuote?.quote} + @string/credit_string")
+                val smsInfo = SmsInfo("", "", "${currentQuote?.quote}")
 
                 val dialogBinding = DataBindingUtil.inflate<SendSmsDialogBinding>(
                     LayoutInflater.from(it),
@@ -138,7 +144,11 @@ class QuoteFragment : Fragment() {
         }
     }
 
-    private fun sendSms(smsInfo: SmsInfo) {
+    private fun sendSms(smsInformation: SmsInfo) {
+        val intent = Intent(context, MainActivity::class.java)
+        val pendingIntent: PendingIntent = PendingIntent.getActivity(context,0,intent,0)
+        val sms : SmsManager = SmsManager.getDefault()
+        sms.sendTextMessage(smsInformation.to,null,smsInformation.text,pendingIntent,null)
 
     }
 
