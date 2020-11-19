@@ -1,14 +1,9 @@
 <resources>
     <string name="app_name">Quoting Mr.West</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <string name="credit_string"> - Kanye West </string>
     <string name="an_error_occurred_while_loading_data"> An Error occurred while Loading data</string>
     <string name="quote">Quote</string>
     <string name="About">This app is a collection of Quotes from Kanye West. Kanye is a very polarizing figure. His quotes and saying are entertaining and thought provoking. Please use responsibly</string>
-    <string name="about_menu">About</string>
     <string name="share">Share</string>
     <string name="send_text">Send Text</string>
     <string name="to">To:</string>

@@ -14,4 +14,11 @@
         android:title="@string/share"
         app:showAsAction="ifRoom" />
 
+    <item
+        android:id="@+id/logo"
+        android:icon="@drawable/mr_west"
+        android:title="logo"
+        app:showAsAction="always"
+        />
+
 </menu>

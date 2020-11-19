@@ -24,9 +24,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val fragment = QuoteFragment()
-        // replaceFragment(fragment)
-
         setSupportActionBar(toolbar)
 
         navController = Navigation.findNavController(this, R.id.fragment)
