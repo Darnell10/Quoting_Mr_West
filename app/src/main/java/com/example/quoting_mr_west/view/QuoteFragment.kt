@@ -98,10 +98,7 @@ class QuoteFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.send_text -> {
-                sendTextStarted = true
-                (activity as MainActivity).checkSmsPermissions()
-            }
+
             R.id.action_share -> {
                 val intent = Intent(Intent.ACTION_SEND)
                 intent.type = "text/plain"

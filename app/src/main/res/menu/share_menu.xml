@@ -3,12 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/send_text"
-        android:icon="@drawable/ic_send"
-        android:title="@string/send_text"
-        app:showAsAction='ifRoom' />
-
-    <item
         android:id="@+id/action_share"
         android:icon="@drawable/ic_share"
         android:title="@string/share"
