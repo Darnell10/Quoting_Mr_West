@@ -34,12 +34,12 @@ Splash Screen
 ![image](https://user-images.githubusercontent.com/30957125/81628527-e6073700-93ce-11ea-9c78-9716dad49545.png)
 
 Quotes
-Screenshot_20201120-001720.png
-Screenshot_20201120-103842.png
+![Screenshot_20201120-110602](https://user-images.githubusercontent.com/30957125/99821956-a4dfa480-2b20-11eb-9c81-7dbe21633d71.png)
+![Screenshot_20201120-103842](https://user-images.githubusercontent.com/30957125/99821352-ee7bbf80-2b1f-11eb-9b1c-82f78580e3ca.png)
 
-Screenshots
-Screenshot_20201120-103904.png
-Screenshot_20201120-103958.png
+Sharing
+![Screenshot_20201120-103904](https://user-images.githubusercontent.com/30957125/99821362-f176b000-2b1f-11eb-9f9d-43775460fd05.png)
+![Screenshot_20201120-103958](https://user-images.githubusercontent.com/30957125/99821366-f3407380-2b1f-11eb-8f55-a4bead9806c0.png)
 
 
 
