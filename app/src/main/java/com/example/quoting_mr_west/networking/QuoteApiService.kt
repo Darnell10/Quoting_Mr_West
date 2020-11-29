@@ -1,5 +1,6 @@
-package com.example.quoting_mr_west.models
+package com.example.quoting_mr_west.networking
 
+import com.example.quoting_mr_west.models.Quote_Model
 import io.reactivex.Single
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory

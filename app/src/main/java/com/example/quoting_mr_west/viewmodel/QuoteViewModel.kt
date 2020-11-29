@@ -4,7 +4,7 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.example.quoting_mr_west.models.QuoteApiService
+import com.example.quoting_mr_west.networking.QuoteApiService
 import com.example.quoting_mr_west.models.Quote_Model
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
