@@ -5,6 +5,7 @@ import android.app.PendingIntent
 import android.content.Intent
 import android.os.Bundle
 import android.telephony.SmsManager
+import android.util.Log
 import android.view.*
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
@@ -29,6 +30,7 @@ class QuoteFragment : Fragment() {
     private lateinit var dataBinding: FragmentQuoteBinding
     private var sendTextStarted = false
     private var currentQuote: Quote_Model? = null
+    private val TAG = this.javaClass.simpleName
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -64,6 +66,7 @@ class QuoteFragment : Fragment() {
     private fun observeQuoteViewModel() {
         viewModel.quote.observe(this, Observer { quote ->
             currentQuote = quote
+            Log.e(TAG,"$currentQuote")
             quote?.let {
                 quote_text_view.visibility = View.VISIBLE
                 dataBinding.quote = it

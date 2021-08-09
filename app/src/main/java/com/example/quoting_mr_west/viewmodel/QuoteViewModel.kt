@@ -35,6 +35,7 @@ class QuoteViewModel(application: Application) : AndroidViewModel(application) {
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<Quote_Model>() {
+
                     override fun onSuccess(quoteModel: Quote_Model) {
                         quoteLoaderError.value = false
                         quote.value = quoteModel
